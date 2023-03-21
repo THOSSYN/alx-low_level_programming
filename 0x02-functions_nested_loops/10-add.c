@@ -3,12 +3,14 @@
 /**
  *add function - "add two numbers together."
  *
- *Return Always 0.
+ *Return: "sum of int x and int y."
  */
 
 int add(int x, int y)
 {
 	int sum;
+
 	sum = (x + y);
-	return sum;
+
+	return (sum);
 }

@@ -3,7 +3,7 @@
 /**
  *main - "header file for 1-print_alphabet."
  *
- *Return: void
+ *Return: Always 0
  */
 
 void print_alphabet(void)

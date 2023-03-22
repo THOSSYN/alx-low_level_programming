@@ -2,8 +2,8 @@
 
 /**
  *jack_bauer - print every minutes of the day.
- *@i: loop through
- *@j: loop through
+ *
+ *
  *Return: void.
  */
 

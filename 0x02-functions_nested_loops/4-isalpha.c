@@ -1,7 +1,7 @@
 #include "main.h"
 
 /**
- *isalphabet - checks if a character is alphabet or not
+ *_isalpha - checks if a character is alphabet or not
  *
  *@c: contains value to be compared
  *
@@ -10,7 +10,7 @@
 
 int _isalpha(int c)
 {
-	if ((c >= 'a' && c >= 'z') || (c >= 'A' && c >= 'Z'))
+	if ((c > 'a' && c < 'z') || (c > 'A' && c < 'Z'))
 	{
 	return (1);
 	}

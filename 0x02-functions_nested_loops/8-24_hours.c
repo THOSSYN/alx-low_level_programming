@@ -2,8 +2,8 @@
 
 /**
  *jack_bauer - print every minutes of the day.
- *@i: loop through all minutes.
- *@j: loop through all seconds.
+ *@i: loop through
+ *@j: loop through
  *Return: void.
  */
 
@@ -22,5 +22,5 @@ void jack_bauer(void)
 		_putchar(j % 10 + '0');
 		_putchar('\n');
 		}
-	}	
+	}
 }

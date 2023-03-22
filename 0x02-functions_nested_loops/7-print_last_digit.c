@@ -3,7 +3,7 @@
 /**
  *print_last_digit - "prints the last digit of anumber."
  *
- *
+ *@r: is the parameter
  *Return: the value of the last digit.
  */
 

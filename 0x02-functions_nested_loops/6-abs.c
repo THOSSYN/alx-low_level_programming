@@ -1,8 +1,8 @@
 #include<stdio.h>
 
 /**
- *_abs: computes the absolute value of an integer.
- *
+ *_abs: "computes the absolute value of an integer."
+ *This programme check absolute value.
  *
  *@n: tests the number
  *

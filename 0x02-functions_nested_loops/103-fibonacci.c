@@ -1,0 +1,26 @@
+#include<stdio.h>
+
+/**
+ *main - "print the sum of even number of fibonacci up to 4000000"
+ *
+ *sum less than 4000000.
+ *
+ *Return: always 0
+ */
+
+int main(void)
+{
+	int i = 0;
+	long a = 1, b = 2, sum = b;
+
+	while (b + a < 4000000)
+	{
+		b += a; 
+		if (b % 2 == 0)
+		sum += b;
+		a = b - a;
+		++i;
+	}
+	printf("%ld\n", sum);
+	return (0);
+}

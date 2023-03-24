@@ -1,9 +1,12 @@
-#include<stdio.h>
 #include<unistd.h>
 
-int _putchar(int c)
+/**
+ *_putchar - writes the character c to the screen.
+ *@c: Character to print
+ *Return: 1 if success
+ */
+
+int _putchar(char c)
 {
-	write(1, &c, 1);
-	putchar('\n');
-	return (0);
+	return (write(1, &c, 1));
 }

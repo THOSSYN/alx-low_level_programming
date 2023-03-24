@@ -2,24 +2,22 @@
 
 /**
  *main - prints prime factors of 612852475143
- *@count: lowest prime factor
- *@number: is the test case 
+ *
+ *
  *Return: Always 0
  */
 
 int main(void)
 {
-	long number = 612852475143;
-	int count;
+	unsigned long int i, n = 612852475143;
 
-	for (count = 2; number > 1; count++)
+	for (i = 3; i < 782849; i = i + 2)
 	{
-		while (number % count == 0)
+		while ((n % i == 0) && (n != i))
 		{
-		printf("%d ", count);
-		number = number / count;
+			n = n / i;
 		}
 	}
-	printf("\n");
+	printf("%lu\n", n);
 	return (0);
 }

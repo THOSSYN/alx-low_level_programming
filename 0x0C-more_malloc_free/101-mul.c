@@ -3,6 +3,7 @@
 #include <string.h>
 #include <stdlib.h>
 #include <stdio.h>
+int print_mul(int);
 /**
  *main - multiply two positive number.
  *@argc: is the argument count
@@ -19,6 +20,11 @@ int main(int argc, char *argv[])
 
 	if (argc != 3)
 	{
+		for (i = 0; err[i] != '\0'; i++)
+		{
+			_putchar(err[i]);
+		}
+		_putchar('\n');
 		return (0);
 	}
 	for (i = 0; av1[i]; i++)
@@ -48,7 +54,21 @@ int main(int argc, char *argv[])
 	num1 = atoi(av1);
 	num2 = atoi(av2);
 	mul = num1 * num2;
-	_putchar(mul + '0');
+	print_mul(mul);
 	_putchar('\n');
 	return (0);
+}
+/**
+ *print_mul - prints long integer value.
+ *@mul: is the value being printed
+ *Return: the result of mul.
+ */
+int print_mul(int mul)
+{
+	if (mul != 0)
+	{
+		print_mul(mul / 10);
+		_putchar((mul % 10) + '0');
+	}
+	return (mul);
 }

@@ -11,8 +11,9 @@ int *array_range(int min, int max)
 {
 	int *arr_ptr;
 	int i;
+	int range = (max - min) + 1;
 
-	arr_ptr = malloc(sizeof(int) * max);
+	arr_ptr = malloc(sizeof(int) * range);
 	if (!arr_ptr)
 	{
 		return (NULL);
@@ -21,7 +22,7 @@ int *array_range(int min, int max)
 	{
 		return (NULL);
 	}
-	for (i = min; i < max; i++)
+	for (i = min; i < range; i++)
 	{
 		arr_ptr[i] = i;
 	}

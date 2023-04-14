@@ -10,28 +10,31 @@
  */
 void *_realloc(void *ptr, unsigned int old_size, unsigned int new_size)
 {
-	int i;
+	void *nu_ptr;
+	char *nu_arr_ptr;
+	char *old_arr_ptr;
+	unsigned int i;
 
-	if (new_size > old_size)
-	{
-		return (0);
-	}
 	if (new_size == old_size)
 	{
 		return (ptr);
 	}
 	if (new_size == 0 && ptr != NULL)
 	{
+		free(ptr);
 		return (NULL);
 	}
-	ptr = realloc(ptr, sizeof(int) * old_size, new_size);
-	if (ptr == NULL)
+	nu_ptr = malloc(new_size);
+	if (nu_ptr == NULL)
 	{
-		ptr = malloc(new_size);
+		return (NULL);
 	}
-	for (i = old_size; i < new_size, i++)
+	nu_arr_ptr = (char *)nu_ptr;
+	old_arr_ptr = (char *)ptr;
+	for (i = 0; i < old_size; i++)
 	{
-		ptr[i] = i;
+		nu_arr_ptr[i] = old_arr_ptr[i];
 	}
 	free(ptr);
+	return (nu_ptr);
 }

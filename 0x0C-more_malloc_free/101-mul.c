@@ -33,7 +33,7 @@ int main(int argc, char *argv[])
 		{
 			for (i = 0; err[i] != '\0'; i++)
 			{
-			_putchar(err[i]);
+				_putchar(err[i]);
 			}
 			_putchar('\n');
 			return (98);
@@ -43,7 +43,7 @@ int main(int argc, char *argv[])
 	{
 		if (!isdigit(av2[i]))
 		{
-			for(i = 0; err[i] != '\0'; i++)
+			for (i = 0; err[i] != '\0'; i++)
 			{
 				_putchar(err[i]);
 			}
@@ -51,8 +51,8 @@ int main(int argc, char *argv[])
 			return (98);
 		}
 	}
-	num1 = atoi(av1);
-	num2 = atoi(av2);
+	num1 = strtol(av1, NULL, 10);
+	num2 = strtol(av2, NULL, 10);
 	mul = num1 * num2;
 	print_mul(mul);
 	_putchar('\n');

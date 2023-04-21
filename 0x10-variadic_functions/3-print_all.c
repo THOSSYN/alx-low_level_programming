@@ -24,15 +24,15 @@ void print_all(const char * const format, ...)
 		{
 			ch = va_arg(fmt_str, int);
 			printf("%c, ", ch);
-		}else if (format[i] == 'i')
+		} else if (format[i] == 'i')
 		{
 			n = va_arg(fmt_str, int);
 			printf("%d, ", n);
-		}else if (format[i] == 'f')
+		} else if (format[i] == 'f')
 		{
 			f = va_arg(fmt_str, double);
 			printf("%f", f);
-		}else if (format[i] == 's')
+		} else if (format[i] == 's')
 		{
 			str = va_arg(fmt_str, char*);
 			if (str == NULL)

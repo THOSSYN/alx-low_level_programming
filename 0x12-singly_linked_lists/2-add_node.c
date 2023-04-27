@@ -5,7 +5,7 @@
 
 /**
  *add_node - adds a new node at the start of list_t list
- *head: is the head node pointer
+ *@head: is the head node pointer
  *@str: is the str node
  *Return: the address of the new element
  */
@@ -13,6 +13,7 @@
 list_t *add_node(list_t **head, const char *str)
 {
 	list_t *makenode;
+
 	makenode =  malloc(sizeof(list_t));
 
 	if (!makenode)

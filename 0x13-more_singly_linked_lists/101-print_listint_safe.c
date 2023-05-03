@@ -13,7 +13,7 @@ size_t print_listint_safe(const listint_t *head)
 	size_t count = 0;
 
 	if (head == NULL)
-		exit (98);
+		exit(98);
 	play = head;
 	ffwd = head;
 
@@ -25,11 +25,11 @@ size_t print_listint_safe(const listint_t *head)
 		ffwd = ffwd->next->next;
 		if (play == ffwd)
 		{
-				printf("-> [%p] %d\n",(void *)play, play->n);
-				play = play->next;
-				count++;
-				ffwd = ffwd->next;
-				break;
+			printf("-> [%p] %d\n", (void *)play, play->n);
+			play = play->next;
+			count++;
+			ffwd = ffwd->next;
+			break;
 		}
 	}
 	return (count);

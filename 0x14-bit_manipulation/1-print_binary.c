@@ -9,17 +9,15 @@
 
 void print_binary(unsigned long int n)
 {
-	unsigned long int rem = 0, i = 0, j;
-	char buf[33];
+	int temp;
 
-	if (n == 0)
-		_putchar('0');
-	while (n != 0)
+	if (n == 0 || n == 1)
+		_putchar(n + '0');
+	else
 	{
-		rem = n & 1;
-		buf[i++] = rem;
+		temp = n & 1;
 		n = n >> 1;
+		print_binary(n);
+		_putchar(temp + 48);
 	}
-	for (j = i; j-- > 0;)
-		_putchar(buf[j] + '0');
 }

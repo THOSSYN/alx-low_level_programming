@@ -11,9 +11,17 @@ void hash_table_print(const hash_table_t *ht)
 	unsigned long int i;
 	int printdelim;
 
-	if (ht == NULL)
+	if (ht == NULL || ht->size == 0)
+	{
+		printf("{}\n");
 		return;
+	}
 
+	if (ht->size == 1)
+	{
+		printf("{'%s' : '%s'}\n", ht->array[0]->key, ht->array[0]->value);
+		return;
+	}
 	printf("{");
 	printdelim = 0;
 	for (i = 0; i < ht->size; i++)

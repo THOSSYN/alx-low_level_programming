@@ -1,10 +1,14 @@
+# Variables
 CC = gcc
 CFLAGS = -Wall -Werror -Wextra -pedantic
 SRC = school.c main.c
 NAME = school
-OBJ = $(SRC:.c=.o)
 RM = rm -f
 
+# Object files (auto-generated from source files)
+OBJ = $(SRC:.c=.o)
+
+# Rules
 .PHONY: all clean oclean fclean re
 
 all: $(NAME)
@@ -12,17 +16,20 @@ all: $(NAME)
 $(NAME): $(OBJ)
 	$(CC) $(OBJ) -o $(NAME)
 
-%.o: %.c m.h
-	$(CC) $(CFLAGS) -c $< -o $@
+# Dependency rule for each .o file
+main.o: main.c m.h
+	$(CC) $(CFLAGS) -c main.c -o main.o
+
+school.o: school.c m.h
+	$(CC) $(CFLAGS) -c school.c -o school.o
 
 clean:
-	-$(RM) *~ $(NAME)
+	-$(RM) *~ $(OBJ) $(NAME)
 
 oclean:
 	-$(RM) $(OBJ)
 
 fclean: clean oclean
-	-$(RM) $(NAME)
 
 re: fclean all
 
@@ -30,3 +37,4 @@ re: fclean all
 ifeq ($(wildcard m.h),m.h)
 include m.h
 endif
+

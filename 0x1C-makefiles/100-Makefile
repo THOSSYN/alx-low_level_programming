@@ -9,7 +9,7 @@ RM = rm -f
 
 all: $(NAME)
 
-$(NAME): main.o school.o
+$(NAME): $(OBJ)
         $(CC) $(OBJ) -o $(NAME)
 
 main.o: main.c m.h 
@@ -28,3 +28,7 @@ fclean: clean oclean
 
 re: fclean all
 
+# Check if m.h exists before including it
+ifeq ($(wildcard m.h),m.h)
+include m.h
+endif

@@ -2,6 +2,8 @@ CC=gcc
 CFLAGS=-Wall -Werror -Wextra -pedantic
 SRC=school.c main.c
 NAME=school
+OBJ=$(SRC:.c=.o)
+RM=rm -f
 
 .PHONY: all clean oclean fclean re
 

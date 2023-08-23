@@ -2,6 +2,7 @@ CC = gcc
 CFLAGS = -Wall -Werror -Wextra -pedantic
 SRC = school.c main.c
 NAME = school
+OBJ = $(SRC:.c=.o)
 RM = rm -f
 
 .PHONY: all clean oclean fclean re
@@ -10,9 +11,6 @@ all: $(NAME)
 
 $(NAME): $(OBJ)
 	$(CC) $(OBJ) -o $(NAME)
-
-$(OBJ): $(SRC) m.h
-	$(CC) $(CFLAGS) -c $*.c -o $@
 
 clean: oclean
 	-$(RM) *~ $(NAME)
@@ -29,4 +27,3 @@ re: fclean all
 ifeq ($(wildcard m.h),m.h)
 include m.h
 endif
-

@@ -8,17 +8,20 @@ RM = rm -f
 
 all: $(NAME)
 
-$(NAME): $(SRC)
-	$(CC) $(CFLAGS) -c $(SRC)
+$(NAME): $(OBJ)
 	$(CC) $(OBJ) -o $(NAME)
 
-clean:
-	-$(RM) *~ $(NAME) $(OBJ)
+$(OBJ): $(SRC) m.h
+	$(CC) $(CFLAGS) -c $*.c -o $@
+
+clean: oclean
+	-$(RM) *~ $(NAME)
 
 oclean:
 	-$(RM) $(OBJ)
 
-fclean: clean oclean
+fclean: clean
+	-$(RM) $(NAME)
 
 re: fclean all
 

@@ -1,30 +1,19 @@
-# Variables
 CC = gcc
 CFLAGS = -Wall -Werror -Wextra -pedantic
 SRC = school.c main.c
 NAME = school
 RM = rm -f
 
-# Object files (auto-generated from source files)
-OBJ = $(SRC:.c=.o)
-
-# Rules
 .PHONY: all clean oclean fclean re
 
 all: $(NAME)
 
-$(NAME): $(OBJ)
+$(NAME): $(SRC)
+	$(CC) $(CFLAGS) -c $(SRC)
 	$(CC) $(OBJ) -o $(NAME)
 
-# Dependency rule for each .o file
-main.o: main.c m.h
-	$(CC) $(CFLAGS) -c main.c -o main.o
-
-school.o: school.c m.h
-	$(CC) $(CFLAGS) -c school.c -o school.o
-
 clean:
-	-$(RM) *~ $(OBJ) $(NAME)
+	-$(RM) *~ $(NAME) $(OBJ)
 
 oclean:
 	-$(RM) $(OBJ)

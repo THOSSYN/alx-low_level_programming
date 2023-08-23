@@ -7,9 +7,7 @@ RM = rm -f
 
 .PHONY: all clean oclean fclean re
 
-all: $(NAME)
-
-$(NAME): $(OBJ)
+all: $(OBJ)
 	$(CC) $(OBJ) -o $(NAME)
 
 clean: oclean
@@ -23,7 +21,6 @@ fclean: clean
 
 re: fclean all
 
-# Check if m.h exists before including it
 ifeq ($(wildcard m.h),m.h)
 include m.h
 endif
